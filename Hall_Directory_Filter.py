@@ -1,8 +1,8 @@
 import csv
 
-input_file = 'Stella_08192024165217.csv'
-keywords= ['sales', 'service', 'director of','vbho','green team','finance','nissan','state','warranty','vbni','general','administrative','transportation','honda','appointment','huho','accounting','title','parts','call center','blue','red','loaner','vbcdj','gsm','internet','vbch','Acura','vbac','dealership','receptionist','vbma','car','admin','echo','da','shop','ecto','used','vbto','bdc','empty','conference','lunch']  # List of keywords to filter out
-stores_prefixes = [83, 69, 65, 57, 55, 52, 51, 54, 13]
+input_file = 'example.csv'
+keywords= []  # List of keywords to filter out
+stores_prefixes = []
 all_data = []
 prefix_count = 0
 
@@ -44,7 +44,7 @@ for i in all_data:
 
     with open(str(stores_prefixes[count])+'_directory.csv', mode='w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(['First Name','Last Name','Role','Department','Extension/User ID'])
+        writer.writerow(['','','','']) # Titles of each column
         writer.writerows(i)
 
     count += 1
